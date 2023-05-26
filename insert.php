@@ -1,7 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "emir2006";
+$password = "***********";
+// password censored for obvious reasons.
 $dbname = "Winkel";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

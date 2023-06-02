@@ -5,7 +5,8 @@
 $host = 'localhost';
 $dbname = 'winkel';
 $username = 'root';
-$password = 'emir2006';
+$password = '***********';
+// password censored for obvious reasons
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

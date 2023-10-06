@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/planets', function () {
     $name = request('name');
     $planets = [
@@ -27,7 +26,7 @@ Route::get('/planets', function () {
         ],
         [
             'name' => 'Earth',
-            'description' => 'Our home planet is the third planet from the Sun, and the only place we know of so far thats inhabited by living things.'
+            'description' => "Our home planet is the third planet from the Sun, and the only place we know of so far that's inhabited by living things."
         ],
         [
             'name' => 'Jupiter',
@@ -36,10 +35,7 @@ Route::get('/planets', function () {
     ];
 
     if ($name) {
-        $filteredPlanets = array_filter($planets, function ($planet) use ($name) {
-            return strcasecmp($planet['name'], $name) === 0;
-        });
-
+        $filteredPlanets = collect($planets)->where('name', $name)->all();
         $planets = $filteredPlanets;
     }
 
